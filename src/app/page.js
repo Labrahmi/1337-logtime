@@ -61,6 +61,11 @@ const Home = () => {
       animateIncrement(user, result, setResult, setAnimationFrameId);
     }
   };
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      handleCalculateClick();
+    }
+  };
   return (
     <ConfigProvider theme={{
       algorithm: theme.darkAlgorithm,
@@ -81,7 +86,7 @@ const Home = () => {
             </div>
             <div className='md:text-[12rem] text-[6rem] text-white opacity-50 select-none font-semibold drop-shadow-xl bg-gradient-radial '>{result}<span className='md:text-[10rem] text-[4rem]'>h</span></div>
             <div className='flex space-x-2'>
-              <Input id="input" size={"large"} placeholder={inputValue ? inputValue : 'login'} onChange={(e) => handleInputChange(e.target.value)} />
+              <Input id="input" size={"large"} placeholder={inputValue} onChange={(e) => handleInputChange(e.target.value)} onKeyDown={(e) => handleKeyPress(e)} />
               <Button size={"large"} type="dashed" onClick={handleCalculateClick}>Calculate</Button>
             </div>
           </div>
