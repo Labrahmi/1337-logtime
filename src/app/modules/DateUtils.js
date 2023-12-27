@@ -18,7 +18,7 @@ export const generateDefaultDates = (referenceDate, rangeData, monthData) => {
         const pastYear = currentMonth === '01' ? currentYear - 1 : currentYear;
         // 
         const pastMonthDate = new Date(`${pastYear}-${pastMonth}-28T23:00:00.000Z`);
-        const currentMonthDate = new Date(`${currentYear}-${currentMonth}-27T23:00:00.000Z`);
+        const currentMonthDate = new Date(`${currentYear}-${currentMonth}-28T23:00:00.000Z`);
         return {
             pastMonthDate: pastMonthDate,
             currentMonthDate: currentMonthDate,
